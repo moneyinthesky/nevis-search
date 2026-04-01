@@ -14,10 +14,15 @@
 - `http://localhost:8080/status` should return 200 OK
 - `http://localhost:8080/docs` should take you to Swagger docs
 
+## Deployed Solution
+- Application and PostgreSQL have been deployed on https://railway.com
+- Database already seeded with data from `SeedData.kt`
+- Accessible on https://nevis-search-production.up.railway.app/docs
+  - Username / Password shared separately
 
 ## Testing the Application
-- Go to `http://localhost:8080/docs`
-- Clicking `Authorize` on Swagger allows you to specified username / password
+- Go to `http://localhost:8080/docs` or https://nevis-search-production.up.railway.app/docs
+- Clicking `Authorize` on Swagger allows you to specify username / password
 - Assuming seed data has been loaded, the following `/search` queries should return expected results
   - `?=alice` returns single client Alice Smith
   - `?=alex` returns 3 clients, demonstrating sort order prioritization (exact match name first, etc.)
