@@ -46,3 +46,9 @@
     - If a document contains a chunk that is semantically close (lower cosine distance) to the query (within a configured threshold) it will be returned
     - The closer the chunk is, the higher the document containing the chunk will score
     - `1.0 - (cosineDistance / threshold)`
+
+## Other Considerations
+- `ApplicationIntegrationTest` tests the application end-to-end with a real embedded DB, however, the OpenAI client is fake
+- For simplicity, I'm letting exception bubble up and get handled by a global error handler
+- I'm currently handling errors from OpenAI by simply failing the request
+  - To develop this further, we could add a retry mechanism (maybe with exponential back-off) and/or circuit breaker
